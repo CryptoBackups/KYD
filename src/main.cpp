@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2017 The Northern developers
+// Copyright (c) 2017-2017 The Realtime developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -46,7 +46,7 @@ using namespace boost;
 using namespace std;
 
 #if defined(NDEBUG)
-#error "Northern cannot be compiled without assertions."
+#error "Realtime cannot be compiled without assertions."
 #endif
 
 // 6 comes from OPCODE (1) + vch.size() (1) + BIGNUM size (4)
@@ -80,7 +80,7 @@ bool fAlerts = DEFAULT_ALERTS;
 unsigned int nStakeMinAge = 60 * 60;
 int64_t nReserveBalance = 0;
 
-/** Fees smaller than this (in unort) are considered zero fee (for relaying and mining)
+/** Fees smaller than this (in urlt) are considered zero fee (for relaying and mining)
  * We are ~100 times smaller then bitcoin now (2015-06-23), set minRelayTxFee only 10 times higher
  * so it's still 10 times lower comparing to bitcoin.
  */
@@ -1624,21 +1624,20 @@ int64_t GetBlockValue(int nHeight)
     }
 
     if (nHeight < Params().LAST_POW_BLOCK())
-        nSubsidy = 10000 * COIN;
-    else if (nHeight <= 30000)
-        nSubsidy = 5 * COIN;
-    else if (nHeight > 30000 && nHeight <= 200000)
-        nSubsidy = 3.75 * COIN;
-    else if (nHeight > 200000 && nHeight <= 500000)
-        nSubsidy = 2.5 * COIN;
-    else if (nHeight > 500000 && nHeight <= 900000)
-        nSubsidy = 1.25 * COIN;
-    else if (nHeight > 900000 && nHeight <= 1500000)
-        nSubsidy = 0.5 * COIN;
-    else if (nHeight > 1500000 && nHeight <= 6000000)
-        nSubsidy = 0.25 * COIN;
+        nSubsidy = 3500 * COIN;
+    else if (nHeight <= 4000)
+        nSubsidy = 1 * COIN;
+    else if (nHeight > 4000 && nHeight <= 9000)
+        nSubsidy = 25 * COIN;
+    else if (nHeight > 9000 && nHeight <= 15000)
+        nSubsidy = 40 * COIN;
+    else if (nHeight > 15000 && nHeight <= 30000)
+        nSubsidy = 55 * COIN;
+    else if (nHeight > 30000 && nHeight <= 50000)
+        nSubsidy = 70 * COIN;
+
     else
-        nSubsidy = 0.125 * COIN;
+        nSubsidy = 50 * COIN;
 
     // Check if we reached the coin max supply.
     int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
@@ -1661,7 +1660,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         return 0;
 
     // Check if we reached coin supply
-    ret = blockValue * 0.85; // 85% of block reward
+    ret = blockValue * 0.90; // 85% of block reward
 
     return ret;
 }
@@ -2051,7 +2050,7 @@ static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck()
 {
-    RenameThread("northern-scriptch");
+    RenameThread("realtime-scriptch");
     scriptcheckqueue.Thread();
 }
 
@@ -3147,7 +3146,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                 nHeight = (*mi).second->nHeight + 1;
         }
 
-        // NORT
+        // RLT
         // It is entierly possible that we don't have enough data and this could fail
         // (i.e. the block could indeed be valid). Store the block for later consideration
         // but issue an initial reject message.
@@ -4580,7 +4579,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             return false;
         }
 
-        // NORT: We use certain sporks during IBD, so check to see if they are
+        // RLT: We use certain sporks during IBD, so check to see if they are
         // available. If not, ask the first peer connected for them.
         bool fMissingSporks = !pSporkDB->SporkExists(SPORK_14_NEW_PROTOCOL_ENFORCEMENT) &&
                 !pSporkDB->SporkExists(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2);

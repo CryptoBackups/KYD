@@ -1,11 +1,11 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Northern
-Comment=Northern P2P Cryptocurrency
-Exec=northern-qt %u
+Name=Realtime
+Comment=Realtime P2P Cryptocurrency
+Exec=realtime-qt %u
 Terminal=false
 Type=Application
-Icon=northern128
-MimeType=x-scheme-handler/northern;
+Icon=realtime128
+MimeType=x-scheme-handler/realtime;
 Categories=Office;Finance;
-Name[en_US]=northern-qt.desktop
+Name[en_US]=realtime-qt.desktop

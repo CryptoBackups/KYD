@@ -1,0 +1,11 @@
+[Protocol]
+exec=realtime-qt '%u'
+protocol=realtime
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

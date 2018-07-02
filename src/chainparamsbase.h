@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between northern-cli and northernd)
- * of a given instance of the Northern system.
+ * CBaseChainParams defines the base parameters (shared between realtime-cli and realtimed)
+ * of a given instance of the Realtime system.
  */
 class CBaseChainParams
 {

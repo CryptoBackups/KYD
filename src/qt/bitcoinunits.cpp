@@ -1,7 +1,7 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2017 The Northern developers
+// Copyright (c) 2017-2017 The Realtime developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -20,18 +20,18 @@ BitcoinUnits::BitcoinUnits(QObject* parent) : QAbstractListModel(parent),
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(NORT);
-    unitlist.append(mNORT);
-    unitlist.append(uNORT);
+    unitlist.append(RLT);
+    unitlist.append(mRLT);
+    unitlist.append(uRLT);
     return unitlist;
 }
 
 bool BitcoinUnits::valid(int unit)
 {
     switch (unit) {
-    case NORT:
-    case mNORT:
-    case uNORT:
+    case RLT:
+    case mRLT:
+    case uRLT:
         return true;
     default:
         return false;
@@ -41,12 +41,12 @@ bool BitcoinUnits::valid(int unit)
 QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
-    case NORT:
-        return QString("nort");
-    case mNORT:
-        return QString("mnort");
-    case uNORT:
-        return QString::fromUtf8("unort");
+    case RLT:
+        return QString("rlt");
+    case mRLT:
+        return QString("mrlt");
+    case uRLT:
+        return QString::fromUtf8("urlt");
     default:
         return QString("???");
     }
@@ -56,23 +56,23 @@ QString BitcoinUnits::name(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case NORT:
-            return QString("NORT");
-        case mNORT:
-            return QString("mNORT");
-        case uNORT:
-            return QString::fromUtf8("μNORT");
+        case RLT:
+            return QString("RLT");
+        case mRLT:
+            return QString("mRLT");
+        case uRLT:
+            return QString::fromUtf8("μRLT");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case NORT:
-            return QString("tNORT");
-        case mNORT:
-            return QString("mtNORT");
-        case uNORT:
-            return QString::fromUtf8("μtNORT");
+        case RLT:
+            return QString("tRLT");
+        case mRLT:
+            return QString("mtRLT");
+        case uRLT:
+            return QString::fromUtf8("μtRLT");
         default:
             return QString("???");
         }
@@ -83,23 +83,23 @@ QString BitcoinUnits::description(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case NORT:
-            return QString("NORT");
-        case mNORT:
-            return QString("Milli-NORT (1 / 1" THIN_SP_UTF8 "000)");
-        case uNORT:
-            return QString("Micro-NORT (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case RLT:
+            return QString("RLT");
+        case mRLT:
+            return QString("Milli-RLT (1 / 1" THIN_SP_UTF8 "000)");
+        case uRLT:
+            return QString("Micro-RLT (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case NORT:
-            return QString("TestNORTs");
-        case mNORT:
-            return QString("Milli-TestNORT (1 / 1" THIN_SP_UTF8 "000)");
-        case uNORT:
-            return QString("Micro-TestNORT (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case RLT:
+            return QString("TestRLTs");
+        case mRLT:
+            return QString("Milli-TestRLT (1 / 1" THIN_SP_UTF8 "000)");
+        case uRLT:
+            return QString("Micro-TestRLT (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
@@ -109,11 +109,11 @@ QString BitcoinUnits::description(int unit)
 qint64 BitcoinUnits::factor(int unit)
 {
     switch (unit) {
-    case NORT:
+    case RLT:
         return 100000000;
-    case mNORT:
+    case mRLT:
         return 100000;
-    case uNORT:
+    case uRLT:
         return 100;
     default:
         return 100000000;
@@ -123,11 +123,11 @@ qint64 BitcoinUnits::factor(int unit)
 int BitcoinUnits::decimals(int unit)
 {
     switch (unit) {
-    case NORT:
+    case RLT:
         return 8;
-    case mNORT:
+    case mRLT:
         return 5;
-    case uNORT:
+    case uRLT:
         return 2;
     default:
         return 0;

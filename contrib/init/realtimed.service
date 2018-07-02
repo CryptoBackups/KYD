@@ -1,0 +1,26 @@
+[Unit]
+Description=Realtime's distributed currency daemon
+After=network.target
+
+[Service]
+User=realtime
+Group=realtime
+
+Type=forking
+PIDFile=/var/lib/realtimed/realtimed.pid
+
+ExecStart=/usr/bin/realtimed -daemon -pid=/var/lib/realtimed/realtimed.pid \
+          -conf=/etc/realtime/realtime.conf -datadir=/var/lib/realtimed
+
+ExecStop=-/usr/bin/realtime-cli -conf=/etc/realtime/realtime.conf \
+         -datadir=/var/lib/realtimed stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

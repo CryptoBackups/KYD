@@ -1,0 +1,26 @@
+# /etc/conf.d/realtimed: config file for /etc/init.d/realtimed
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/realtime/realtime.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/realtimed"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/realtimed.pid"
+
+# Where to write realtimed data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/realtimed"
+
+# User and group to own realtimed process
+#BITCOIND_USER="realtime"
+#BITCOIND_GROUP="realtime"
+
+# Path to realtimed executable
+#BITCOIND_BIN="/usr/bin/realtimed"
+
+# Nice value to run realtimed under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

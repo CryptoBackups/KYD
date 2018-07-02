@@ -242,10 +242,10 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Northern server.");
+            "\nStop Realtime server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "Northern server stopping";
+    return "Realtime server stopping";
 }
 
 
@@ -327,33 +327,33 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
-        /* Northern features */
-        {"northern", "masternode", &masternode, true, true, false},
-        {"northern", "listmasternodes", &listmasternodes, true, true, false},
-        {"northern", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"northern", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"northern", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"northern", "masternodedebug", &masternodedebug, true, true, false},
-        {"northern", "startmasternode", &startmasternode, true, true, false},
-        {"northern", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"northern", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"northern", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"northern", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"northern", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"northern", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"northern", "mnbudget", &mnbudget, true, true, false},
-        {"northern", "preparebudget", &preparebudget, true, true, false},
-        {"northern", "submitbudget", &submitbudget, true, true, false},
-        {"northern", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"northern", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"northern", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"northern", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"northern", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"northern", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"northern", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"northern", "checkbudgets", &checkbudgets, true, true, false},
-        {"northern", "mnsync", &mnsync, true, true, false},
-        {"northern", "spork", &spork, true, true, false},
+        /* Realtime features */
+        {"realtime", "masternode", &masternode, true, true, false},
+        {"realtime", "listmasternodes", &listmasternodes, true, true, false},
+        {"realtime", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"realtime", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"realtime", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"realtime", "masternodedebug", &masternodedebug, true, true, false},
+        {"realtime", "startmasternode", &startmasternode, true, true, false},
+        {"realtime", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"realtime", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"realtime", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"realtime", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"realtime", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"realtime", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"realtime", "mnbudget", &mnbudget, true, true, false},
+        {"realtime", "preparebudget", &preparebudget, true, true, false},
+        {"realtime", "submitbudget", &submitbudget, true, true, false},
+        {"realtime", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"realtime", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"realtime", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"realtime", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"realtime", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"realtime", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"realtime", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"realtime", "checkbudgets", &checkbudgets, true, true, false},
+        {"realtime", "mnsync", &mnsync, true, true, false},
+        {"realtime", "spork", &spork, true, true, false},
 #ifdef ENABLE_WALLET
 
         /* Wallet */
@@ -1070,14 +1070,14 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(string methodname, string args)
 {
-    return "> northern-cli " + methodname + " " + args + "\n";
+    return "> realtime-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args)
 {
     return "> curl --user myusername --data-binary '{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", "
            "\"method\": \"" +
-           methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:9332/\n";
+           methodname + "\", \"params\": [" + args + "] }' -H 'content-type: text/plain;' http://127.0.0.1:9031/\n";
 }
 
 const CRPCTable tableRPC;
