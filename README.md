@@ -9,10 +9,10 @@ Furthermore, as result of offering multiple ways for users to mint new RLT coins
 #
 
 #### Block times: - *1 minute* 
-#### Maximum supply: - *5,000,000 (5 million) RLT*
-#### Consensus mechanism: - *Proof-of-Stake (85% masternodes, 15% stakers)*
+#### Maximum supply: - *32,000,000 (32 million) RLT*
+#### Consensus mechanism: - *Proof-of-Stake (90% masternodes, 10% stakers)*
 #### Algorithm: - *Quark-hash* 
-#### Masternode collateral - *2,500 RLT*  
+#### Masternode collateral - *5,000 RLT*  
 #### Features: - *SwiftTX, budget, treausury and masternode governance is enabled* 
 #### RPC Port: - *9031* 
 #### P2P Port: - *9032* 
@@ -21,23 +21,23 @@ Furthermore, as result of offering multiple ways for users to mint new RLT coins
 
 ### Block reward breakdown (Block height - Reward per block)
 #
-#### Block 201-30,000	  -   *5.000 RLT*
+#### Block 201-4,000	    -   * 1.000 RLT*
 
-#### Block 30,001-200,000   -   *3.750 RLT*
+#### Block 4,001-9,000    -   *25.000 RLT*
 
-#### Block 200,001-500,000  -   *2.500 RLT*
+#### Block 9,001-15,000   -   *40.000 RLT*
 
-#### Block 500,001-900,000  -   *1.250 RLT*
+#### Block 15,001-30,000  -   *55.000 RLT*
 
-#### Block 900,001-1,500,000  -  *0.500 RLT*
+#### Block 30,001-50,000  -   *70.000 RLT*
 
-#### Block 1,500,001-6,000,000   -   *0.250 RLT*
+#### Block 50,001+        -   *50.000 RLT*
 
 #### *11 year tapering inflation reward, with a cumlative supply capped at 5,000,000 RLT.*
 
 #
 
-### More information at [https://rlt.network](https://rlt.network)
-### Join our [Discord!](https://discord.gg/9nzt37V)
+### More information at [http://www.timereal.site/](http://www.timereal.site/)
+### Join our [Discord!](https://discord.gg/qyJ48T)
 
 # realtime
