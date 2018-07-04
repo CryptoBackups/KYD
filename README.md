@@ -9,10 +9,10 @@ Furthermore, as result of offering multiple ways for users to mint new KYD coins
 #
 
 #### Block times: - *1 minute* 
-#### Maximum supply: - *5,000,000 (5 million) KYD*
-#### Consensus mechanism: - *Proof-of-Stake (85% masternodes, 15% stakers)*
+#### Maximum supply: - *21,000,000 (21 million) KYD*
+#### Consensus mechanism: - *Proof-of-Stake (80% masternodes, 20% stakers)*
 #### Algorithm: - *Quark-hash* 
-#### Masternode collateral - *2,500 KYD*  
+#### Masternode collateral - *10,500 KYD*  
 #### Features: - *SwiftTX, budget, treausury and masternode governance is enabled* 
 #### RPC Port: - *3435* 
 #### P2P Port: - *3434* 
@@ -21,22 +21,6 @@ Furthermore, as result of offering multiple ways for users to mint new KYD coins
 
 ### Block reward breakdown (Block height - Reward per block)
 #
-#### Block 201-30,000	  -   *5.000 KYD*
 
-#### Block 30,001-200,000   -   *3.750 KYD*
 
-#### Block 200,001-500,000  -   *2.500 KYD*
-
-#### Block 500,001-900,000  -   *1.250 KYD*
-
-#### Block 900,001-1,500,000  -  *0.500 KYD*
-
-#### Block 1,500,001-6,000,000   -   *0.250 KYD*
-
-#### *11 year tapering inflation reward, with a cumlative supply capped at 5,000,000 KYD.*
-
-#
-
-### More information at [https://kyd.network](https://kyd.network)
-### Join our [Discord!](https://discord.gg/9nzt37V)
 
