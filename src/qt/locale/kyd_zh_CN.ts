@@ -602,8 +602,8 @@
         <translation>发送数字货币到KYD地址</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and kydcoin: URIs)</source>
-        <translation>请求支付（生成二维码和kydcoin：URIs）</translation>
+        <source>Request payments (generates QR codes and kyd: URIs)</source>
+        <translation>请求支付（生成二维码和kyd：URIs）</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -662,8 +662,8 @@
         <translation>打开主节点配置文件</translation>
     </message>
     <message>
-        <source>Open a kydcoin: URI or payment request</source>
-        <translation>打开kydcoin：URI或付款请求</translation>
+        <source>Open a kyd: URI or payment request</source>
+        <translation>打开kyd：URI或付款请求</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -1248,8 +1248,8 @@ Address: %4
         <translation>消息:</translation>
     </message>
     <message>
-        <source>A message that was attached to the kydcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the KYD network.</source>
-        <translation>附加到kydcoin：URI的消息，该消息将与转账信息一起存储以供参考。 注意：此消息不会通过KYD网络发送。</translation>
+        <source>A message that was attached to the kyd: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the KYD network.</source>
+        <translation>附加到kyd：URI的消息，该消息将与转账信息一起存储以供参考。 注意：此消息不会通过KYD网络发送。</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to your address book</source>
@@ -1469,7 +1469,7 @@ Address: %4
     </message>
     </context>
 <context>
-    <name>kydcoin-core</name>
+    <name>kyd-core</name>
     <message>
         <source>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</source>
         <translation>在收到相关警报时执行命令，或者看到一个很长的分叉（cmd中的%s被消息替换）</translation>

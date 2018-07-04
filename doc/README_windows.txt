@@ -16,7 +16,7 @@ more scalable blockchain that is better suited for daily transactional use.
 
 Setup
 -----
-Unpack the files into a directory and run kydcoin-qt.exe.
+Unpack the files into a directory and run kyd-qt.exe.
 
 KYD Core is the original KYD client and it builds the backbone of the network.
 However, it downloads and stores the entire history of KYD transactions;

@@ -522,8 +522,8 @@
         <translation>Wyślij monety do adresu KYD</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and kydcoin: URIs)</source>
-        <translation>Zarządaj płatności (generuje kod QR i kydcoin:URI)</translation>
+        <source>Request payments (generates QR codes and kyd: URIs)</source>
+        <translation>Zarządaj płatności (generuje kod QR i kyd:URI)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -578,8 +578,8 @@
         <translation>Otwórz &amp;Plik konfiguracji Masternode</translation>
     </message>
     <message>
-        <source>Open a kydcoin: URI or payment request</source>
-        <translation>Otwórz kydcoin: URI i żądanie zapłaty</translation>
+        <source>Open a kyd: URI or payment request</source>
+        <translation>Otwórz kyd: URI i żądanie zapłaty</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -1927,7 +1927,7 @@ Proszę sprawdzić adres i spróbować ponownie</translation>
     </message>
     </context>
 <context>
-    <name>kydcoin-core</name>
+    <name>kyd-core</name>
     <message>
         <source>Error</source>
         <translation>Błąd</translation>

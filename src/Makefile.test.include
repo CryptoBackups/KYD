@@ -1,7 +1,7 @@
-TESTS += test/test_kydcoin test/bitcoin-util-test.py
-bin_PROGRAMS += test/test_kydcoin
+TESTS += test/test_kyd test/bitcoin-util-test.py
+bin_PROGRAMS += test/test_kyd
 TEST_SRCDIR = test
-TEST_BINARY=test/test_kydcoin$(EXEEXT)
+TEST_BINARY=test/test_kyd$(EXEEXT)
 
 
 EXTRA_DIST += \
@@ -64,7 +64,7 @@ BITCOIN_TESTS =\
   test/sighash_tests.cpp \
   test/sigopcount_tests.cpp \
   test/skiplist_tests.cpp \
-  test/test_kydcoin.cpp \
+  test/test_kyd.cpp \
   test/timedata_tests.cpp \
   test/torcontrol_tests.cpp \
   test/transaction_tests.cpp \
@@ -79,22 +79,22 @@ BITCOIN_TESTS += \
   test/rpc_wallet_tests.cpp
 endif
 
-test_test_kydcoin_SOURCES = $(BITCOIN_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
-test_test_kydcoin_CPPFLAGS = $(BITCOIN_INCLUDES) -I$(builddir)/test/ $(TESTDEFS)
-test_test_kydcoin_LDADD = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
+test_test_kyd_SOURCES = $(BITCOIN_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
+test_test_kyd_CPPFLAGS = $(BITCOIN_INCLUDES) -I$(builddir)/test/ $(TESTDEFS)
+test_test_kyd_LDADD = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
   $(BOOST_LIBS) $(BOOST_UNIT_TEST_FRAMEWORK_LIB) $(LIBSECP256K1) $(EVENT_LIBS) $(EVENT_PTHREADS_LIBS)
 if ENABLE_WALLET
-test_test_kydcoin_LDADD += $(LIBBITCOIN_WALLET)
+test_test_kyd_LDADD += $(LIBBITCOIN_WALLET)
 endif
 
-test_test_kydcoin_LDADD += $(LIBBITCOIN_CONSENSUS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS)
-test_test_kydcoin_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) -static
+test_test_kyd_LDADD += $(LIBBITCOIN_CONSENSUS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS)
+test_test_kyd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) -static
 
 if ENABLE_ZMQ
-test_test_kydcoin_LDADD += $(ZMQ_LIBS)
+test_test_kyd_LDADD += $(ZMQ_LIBS)
 endif
 
-nodist_test_test_kydcoin_SOURCES = $(GENERATED_TEST_FILES)
+nodist_test_test_kyd_SOURCES = $(GENERATED_TEST_FILES)
 
 $(BITCOIN_TESTS): $(GENERATED_TEST_FILES)
 
@@ -102,13 +102,13 @@ CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno $(GENERATED_TEST_FILES)
 
 CLEANFILES += $(CLEAN_BITCOIN_TEST)
 
-kydcoin_test: $(TEST_BINARY)
+kyd_test: $(TEST_BINARY)
 
-kydcoin_test_check: $(TEST_BINARY) FORCE
+kyd_test_check: $(TEST_BINARY) FORCE
 	$(MAKE) check-TESTS TESTS=$^
 
-kydcoin_test_clean : FORCE
-	rm -f $(CLEAN_BITCOIN_TEST) $(test_test_kydcoin_OBJECTS) $(TEST_BINARY)
+kyd_test_clean : FORCE
+	rm -f $(CLEAN_BITCOIN_TEST) $(test_test_kyd_OBJECTS) $(TEST_BINARY)
 
 check-local:
 	$(AM_V_at)$(MAKE) $(AM_MAKEFLAGS) -C secp256k1 check

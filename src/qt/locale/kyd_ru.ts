@@ -598,8 +598,8 @@
         <translation>Отправить монеты на KYD адрес</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and kydcoin: URIs)</source>
-        <translation>Запросить платежи (генерирует QR-код и kydcoin: URI)</translation>
+        <source>Request payments (generates QR codes and kyd: URIs)</source>
+        <translation>Запросить платежи (генерирует QR-код и kyd: URI)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -658,8 +658,8 @@
         <translation>Открыть файл настроек мастернод</translation>
     </message>
     <message>
-        <source>Open a kydcoin: URI or payment request</source>
-        <translation>Открыть kydcoin: URI или запрос платежа</translation>
+        <source>Open a kyd: URI or payment request</source>
+        <translation>Открыть kyd: URI или запрос платежа</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -801,8 +801,8 @@ MultiSend: %1</translation>
         <translation>Текстовая метка</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (kydcoin.conf).</source>
-        <translation>Будут показаны не все транзакции. Для отображения всех транзакций необходимо выставить txindex=1 в конфигурационном файле (kydcoin.conf).</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (kyd.conf).</source>
+        <translation>Будут показаны не все транзакции. Для отображения всех транзакций необходимо выставить txindex=1 в конфигурационном файле (kyd.conf).</translation>
     </message>
 </context>
 <context>
@@ -1801,8 +1801,8 @@ Please check the address and try again.</source>
         <translation>Неверный адрес оплаты %1</translation>
     </message>
     <message>
-        <source>Cannot start kydcoin: click-to-pay handler</source>
-        <translation>Не удалось запустить kydcoin: обработчик click-to-pay </translation>
+        <source>Cannot start kyd: click-to-pay handler</source>
+        <translation>Не удалось запустить kyd: обработчик click-to-pay </translation>
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid KYD address or malformed URI parameters.</source>
@@ -2902,7 +2902,7 @@ Please check the address and try again.</source>
     </message>
     </context>
 <context>
-    <name>kydcoin-core</name>
+    <name>kyd-core</name>
     <message>
         <source>SwiftTX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
         <translation>Для SwiftTX требуется как минимум 6 подтверждений, Вам нужно подождать несколько минут и попытаться снова.</translation>

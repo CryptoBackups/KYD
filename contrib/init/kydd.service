@@ -3,17 +3,17 @@ Description=KYD's distributed currency daemon
 After=network.target
 
 [Service]
-User=kydcoin
-Group=kydcoin
+User=kyd
+Group=kyd
 
 Type=forking
-PIDFile=/var/lib/kydcoind/kydcoind.pid
+PIDFile=/var/lib/kydd/kydd.pid
 
-ExecStart=/usr/bin/kydcoind -daemon -pid=/var/lib/kydcoind/kydcoind.pid \
-          -conf=/etc/kydcoin/kydcoin.conf -datadir=/var/lib/kydcoind
+ExecStart=/usr/bin/kydd -daemon -pid=/var/lib/kydd/kydd.pid \
+          -conf=/etc/kyd/kyd.conf -datadir=/var/lib/kydd
 
-ExecStop=-/usr/bin/kydcoin-cli -conf=/etc/kydcoin/kydcoin.conf \
-         -datadir=/var/lib/kydcoind stop
+ExecStop=-/usr/bin/kyd-cli -conf=/etc/kyd/kyd.conf \
+         -datadir=/var/lib/kydd stop
 
 Restart=always
 PrivateTmp=true

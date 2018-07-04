@@ -54,11 +54,11 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x000001e1a5a4257154c65b46fc732bfa637ba7a898525373ba32ec4aa79921dd"));
+    (0, uint256("0x0000017eae7021fcaad4a07f4b0cef052105843f1f02ff65ee99437d97d44000"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1526928414, // * UNIX timestamp of last checkpoint block
+    1530718541, // * UNIX timestamp of last checkpoint block
     0,          // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
@@ -93,10 +93,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0x52;
-        pchMessageStart[1] = 0xdb;
-        pchMessageStart[2] = 0x11;
-        pchMessageStart[3] = 0xab;
+        pchMessageStart[0] = 0x42;
+        pchMessageStart[1] = 0xcb;
+        pchMessageStart[2] = 0x12;
+        pchMessageStart[3] = 0xac;
         vAlertPubKey = ParseHex("045ad6f1551c2367f81c0ecb4d45d088298442887645a314dfcba3039401872473b0200e69d9679a0d7cc307fb9aaaacafb0cebc18050ce7c995fa19c6accc8415");
         nDefaultPort = 3434;
         bnProofOfWorkLimit = ~uint256(0) >> 1;
@@ -107,21 +107,21 @@ public:
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
         nTargetTimespan = 2 * 60; 
-        nTargetSpacing = 2 * 60;  // KYD: 2 minute blocks
+        nTargetSpacing = 2 * 60;  // KYD: 1 minute blocks
         nMaturity = 5; // 6 block maturity (+1 elsewhere)
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 5000000 * COIN; // 5 mil max supply
+        nMaxMoneyOut = 21000000 * COIN; // 21 mil max supply
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 200;
+        nLastPOWBlock = 210;
         nModifierUpdateBlock = 1; // we use the version 2 for KYD
 
         /*
-         * python ~/genesis.py -a quark-hash -z "Bitcoin now uses as much energy as Ireland - businessgreen 21/05/2018" -t 1526928414 -v 0 -p 04f5a8143f86ad8ac63791fbbdb8e0b91a8da88c8c693a95f6c2c13c063ea790f7960b8025a9047a7bc671d5cfe707a2dd2e13b86182e1064a0eea7bf863636363
+         * python ~/genesis.py -a quark-hash -z "KYD chain is alive" -t 1530718541 -v 0 -p 04f5a8143f86ad8ac63791fbbdb8e0b91a8da88c8c693a95f6c2c13c063ea790f7960b8025a9047a7bc671d5cfe707a2dd2e13b86182e1064a0eea7bf863636363 -n 21561600 -b 0x1e0ffff0
 
          */
 
-        const char* pszTimestamp = "Bitcoin now uses as much energy as Ireland - businessgreen 21/05/2018";
+        const char* pszTimestamp = "KYD chain is alive";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -132,20 +132,20 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1526928414;
+        genesis.nTime = 1530718541;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 21561793;
+        genesis.nNonce = 25052435;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x000001e1a5a4257154c65b46fc732bfa637ba7a898525373ba32ec4aa79921dd"));
-        assert(genesis.hashMerkleRoot == uint256("0xd611ad6808864e0e9bd331f3ffa2298c9e13a54d9fe59a99ccb3a75db374b7c9"));
+        assert(hashGenesisBlock == uint256("0x0000017eae7021fcaad4a07f4b0cef052105843f1f02ff65ee99437d97d44000"));
+        assert(genesis.hashMerkleRoot == uint256("0x880c2ae1019cd66442ee835aecf79f654f1b265304d43aecb45b349eccc151f2"));
 
         // DNS Seeding
         //vSeeds.push_back(CDNSSeedData("", ""));
  
 
-        // KYD addresses start with 'N'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 53);
+        // KYD addresses start with 'K'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 45);
         // KYD script addresses start with '3'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 6);
         // KYD private keys start with 'K'
@@ -172,7 +172,7 @@ public:
         nPoolMaxTransactions = 3;
         strSporkKey = "04cc17389379a0e323f53ea504d38cd71f43dc22f597805fed33a51b05ced1a3ae0db84089985f351b3737721736a82f58c8bd529f79c8ffe57e922bda792146ab";
         strMasternodePoolDummyAddress = "NSJVWUkt6HtSCY2SaJ2akeyJUg8bg1hW3S";
-        nStartMasternodePayments = 4070908800; // Off until a further update (tiered masternodes)
+        nStartMasternodePayments = 4070908800; 
 
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
     }
@@ -206,7 +206,7 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // KYD: 1 day
         nTargetSpacing = 2 * 60;  // KYD: 1 minute
-        nLastPOWBlock = 200;
+        nLastPOWBlock = 1500;
         nMaturity = 15;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 1;
@@ -232,7 +232,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
         // Testnet KYD BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
-        // Testnet kydcoin BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet kyd BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));

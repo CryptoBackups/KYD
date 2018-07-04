@@ -12,8 +12,8 @@ When a "Transaction Lock" occurs the hash of the related transaction is broadcas
 * `zmqpubhashtxlock`: publishes the transaction hash when locked via SwiftTX
 
 This mechanism has been integrated into Bitcore-Node-KYD which allows for notification to be broadcast through Insight API in one of two ways:
-* WebSocket: [https://github.com/kydcoin/insight-api-kydcoin#web-socket-api](https://github.com/kydcoin/insight-api-kydcoin#web-socket-api)
-* API: [https://github.com/kydcoin/insight-api-kydcoin#swifttx-transactions](https://github.com/kydcoin/insight-api-kydcoin#swifttx-transactions)
+* WebSocket: [https://github.com/kyd/insight-api-kyd#web-socket-api](https://github.com/kyd/insight-api-kyd#web-socket-api)
+* API: [https://github.com/kyd/insight-api-kyd#swifttx-transactions](https://github.com/kyd/insight-api-kyd#swifttx-transactions)
 
 ####Command line option
 

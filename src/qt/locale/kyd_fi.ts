@@ -595,8 +595,8 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Lähetä kolikkoja KYD osoitteeseen</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and kydcoin: URIs)</source>
-        <translation>Pyydä maksuja (Generoi QR koodeja ja kydcoin: URIja)</translation>
+        <source>Request payments (generates QR codes and kyd: URIs)</source>
+        <translation>Pyydä maksuja (Generoi QR koodeja ja kyd: URIja)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -655,8 +655,8 @@ Syötä salausavain laatikon keskelle. Paina salaa tuottaaksesi salatun yksityis
         <translation>Avaa Masternode konfiguraatiotiedosto</translation>
     </message>
     <message>
-        <source>Open a kydcoin: URI or payment request</source>
-        <translation>Avaa kydcoin: URI tai pyydä maksua</translation>
+        <source>Open a kyd: URI or payment request</source>
+        <translation>Avaa kyd: URI tai pyydä maksua</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -2384,7 +2384,7 @@ Please check the address and try again.</source>
     </message>
     </context>
 <context>
-    <name>kydcoin-core</name>
+    <name>kyd-core</name>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
         <translation>Varoitus: Verkko ei näytä olevan samaa mieltä! Jotkin mainaajat saattavat kokea ongelmia.</translation>

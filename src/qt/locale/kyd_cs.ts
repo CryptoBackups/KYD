@@ -602,8 +602,8 @@
         <translation>Odeslat platbuna KYD adresu</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and kydcoin: URIs)</source>
-        <translation>Vyžádat platbu (generování QK kódu a kydcoin: URIs)</translation>
+        <source>Request payments (generates QR codes and kyd: URIs)</source>
+        <translation>Vyžádat platbu (generování QK kódu a kyd: URIs)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -662,8 +662,8 @@
         <translation>Otevřít Masternodový konfigurační soubor</translation>
     </message>
     <message>
-        <source>Open a kydcoin: URI or payment request</source>
-        <translation>Otevřít kydcoin: URI nebo platební žádost</translation>
+        <source>Open a kyd: URI or payment request</source>
+        <translation>Otevřít kyd: URI nebo platební žádost</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -801,8 +801,8 @@ MultiSend: %1</translation>
         <translation>TextPopisku</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (kydcoin.conf).</source>
-        <translation>Ne všechny transakce budou zobrazeny. Pro zobrazení všech transackí nastavte v konfiguračním souboru (kydcoin.conf) txindex=1.</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (kyd.conf).</source>
+        <translation>Ne všechny transakce budou zobrazeny. Pro zobrazení všech transackí nastavte v konfiguračním souboru (kyd.conf) txindex=1.</translation>
     </message>
 </context>
 <context>
@@ -2239,7 +2239,7 @@ Prosím zkontrolujte adresu a zkuste to znovu.</translation>
     </message>
     </context>
 <context>
-    <name>kydcoin-core</name>
+    <name>kyd-core</name>
     <message>
         <source>Error</source>
         <translation>Chyba</translation>

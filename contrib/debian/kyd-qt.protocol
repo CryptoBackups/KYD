@@ -1,6 +1,6 @@
 [Protocol]
-exec=kydcoin-qt '%u'
-protocol=kydcoin
+exec=kyd-qt '%u'
+protocol=kyd
 input=none
 output=none
 helper=true

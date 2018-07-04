@@ -1,10 +1,10 @@
 Sample configuration files for:
 
-SystemD: kydcoind.service
-Upstart: kydcoind.conf
-OpenRC:  kydcoind.openrc
-         kydcoind.openrcconf
-CentOS:  kydcoind.init
+SystemD: kydd.service
+Upstart: kydd.conf
+OpenRC:  kydd.openrc
+         kydd.openrcconf
+CentOS:  kydd.init
 
 have been made available to assist packagers in creating node packages here.
 

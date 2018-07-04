@@ -811,7 +811,7 @@
     </message>
     <message>
         <location line="+11"/>
-        <source>Request payments (generates QR codes and kydcoin: URIs)</source>
+        <source>Request payments (generates QR codes and kyd: URIs)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -891,7 +891,7 @@
     </message>
     <message>
         <location line="+17"/>
-        <source>Open a kydcoin: URI or payment request</source>
+        <source>Open a kyd: URI or payment request</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1112,7 +1112,7 @@ Address: %4
     </message>
     <message>
         <location filename="../blockexplorer.cpp" line="+476"/>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (kydcoin.conf).</source>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (kyd.conf).</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2645,7 +2645,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="-108"/>
-        <source>Cannot start kydcoin: click-to-pay handler</source>
+        <source>Cannot start kyd: click-to-pay handler</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3969,7 +3969,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+10"/>
-        <source>A message that was attached to the kydcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the KYD network.</source>
+        <source>A message that was attached to the kyd: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the KYD network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4935,9 +4935,9 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>kydcoin-core</name>
+    <name>kyd-core</name>
     <message>
-        <location filename="../kydcoinstrings.cpp" line="+15"/>
+        <location filename="../kydstrings.cpp" line="+15"/>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation type="unfinished">(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</translation>
     </message>
@@ -5153,10 +5153,10 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+4"/>
-        <source>To use kydcoind, or the -server option to kydcoin-qt, you must set an rpcpassword in the configuration file:
+        <source>To use kydd, or the -server option to kyd-qt, you must set an rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=kydcoinrpc
+rpcuser=kydrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.

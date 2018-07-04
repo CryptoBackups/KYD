@@ -16,7 +16,7 @@ Budgets go through a series of stages before being paid:
 Prepare collateral transaction
 ------------------------
 
-mnbudget prepare \<proposal-name\> \<url\> \<payment_count\> \<block_start\> \<kydcoin_address\> \<monthly_payment_kydcoin\> [use_ix(true|false)]
+mnbudget prepare \<proposal-name\> \<url\> \<payment_count\> \<block_start\> \<kyd_address\> \<monthly_payment_kyd\> [use_ix(true|false)]
 
 Example:
 ```
@@ -32,7 +32,7 @@ In this transaction we prepare collateral for "_cool-project_". This proposal wi
 Submit proposal to network
 ------------------------
 
-mnbudget submit \<proposal-name\> \<url\> \<payment_count\> \<block_start\> \<kydcoin_address\> \<monthly_payment_kydcoin\> \<collateral_hash\>
+mnbudget submit \<proposal-name\> \<url\> \<payment_count\> \<block_start\> \<kyd_address\> \<monthly_payment_kyd\> \<collateral_hash\>
 
 Example:
 ```

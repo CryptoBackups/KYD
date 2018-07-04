@@ -591,8 +591,8 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
         <translation>Skicka mynt till en KYD adress</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and kydcoin: URIs)</source>
-        <translation>Begär betalning (genererar QR kod och kydcoin: URls)</translation>
+        <source>Request payments (generates QR codes and kyd: URIs)</source>
+        <translation>Begär betalning (genererar QR kod och kyd: URls)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -1354,7 +1354,7 @@ Ange en lösenfras i den mellersta boxen. Tryck kryptera för att beräkna den k
     </message>
     </context>
 <context>
-    <name>kydcoin-core</name>
+    <name>kyd-core</name>
     <message>
         <source>Error</source>
         <translation>Fel</translation>

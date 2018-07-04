@@ -590,8 +590,8 @@
         <translation>送出錢幣到 KYD 地址</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and kydcoin: URIs)</source>
-        <translation>請求付款 (會產生 QR Code跟 kydcoin 位址)</translation>
+        <source>Request payments (generates QR codes and kyd: URIs)</source>
+        <translation>請求付款 (會產生 QR Code跟 kyd 位址)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -650,8 +650,8 @@
         <translation>打開Masternode設定檔</translation>
     </message>
     <message>
-        <source>Open a kydcoin: URI or payment request</source>
-        <translation>打開kydcoin: 位址或付款請求 </translation>
+        <source>Open a kyd: URI or payment request</source>
+        <translation>打開kyd: 位址或付款請求 </translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -949,6 +949,6 @@
     </message>
     </context>
 <context>
-    <name>kydcoin-core</name>
+    <name>kyd-core</name>
     </context>
 </TS>

@@ -45,7 +45,7 @@ QFont bitcoinAddressFont();
 void setupAddressWidget(QValidatedLineEdit* widget, QWidget* parent);
 void setupAmountWidget(QLineEdit* widget, QWidget* parent);
 
-// Parse "kydcoin:" URI into recipient object, return true on successful parsing
+// Parse "kyd:" URI into recipient object, return true on successful parsing
 bool parseBitcoinURI(const QUrl& uri, SendCoinsRecipient* out);
 bool parseBitcoinURI(QString uri, SendCoinsRecipient* out);
 QString formatBitcoinURI(const SendCoinsRecipient& info);
@@ -103,7 +103,7 @@ bool isObscured(QWidget* w);
 // Open debug.log
 void openDebugLogfile();
 
-// Open kydcoin.conf
+// Open kyd.conf
 void openConfigfile();
 
 // Open masternode.conf

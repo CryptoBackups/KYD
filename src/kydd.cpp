@@ -67,7 +67,7 @@ bool AppInit(int argc, char* argv[])
     //
     // Parameters
     //
-    // If Qt is used, parameters/kydcoin.conf are parsed in qt/kydcoin.cpp's main()
+    // If Qt is used, parameters/kyd.conf are parsed in qt/kyd.cpp's main()
     ParseParameters(argc, argv);
 
     // Process help and version before taking care about datadir
@@ -78,7 +78,7 @@ bool AppInit(int argc, char* argv[])
             strUsage += LicenseInfo();
         } else {
             strUsage += "\n" + _("Usage:") + "\n" +
-                        "  kydcoind [options]                     " + _("Start KYD Core Daemon") + "\n";
+                        "  kydd [options]                     " + _("Start KYD Core Daemon") + "\n";
 
             strUsage += "\n" + HelpMessage(HMM_BITCOIND);
         }
@@ -114,11 +114,11 @@ bool AppInit(int argc, char* argv[])
         // Command-line RPC
         bool fCommandLine = false;
         for (int i = 1; i < argc; i++)
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "kydcoin:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "kyd:"))
                 fCommandLine = true;
 
         if (fCommandLine) {
-            fprintf(stderr, "Error: There is no RPC client functionality in kydcoind anymore. Use the kydcoin-cli utility instead.\n");
+            fprintf(stderr, "Error: There is no RPC client functionality in kydd anymore. Use the kyd-cli utility instead.\n");
             exit(1);
         }
 #ifndef WIN32
@@ -177,7 +177,7 @@ int main(int argc, char* argv[])
 {
     SetupEnvironment();
 
-    // Connect kydcoin signal handlers
+    // Connect kyd signal handlers
     noui_connect();
 
     return (AppInit(argc, argv) ? 0 : 1);

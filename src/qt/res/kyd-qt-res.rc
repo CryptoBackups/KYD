@@ -22,10 +22,10 @@ BEGIN
             VALUE "CompanyName",        "KYD"
             VALUE "FileDescription",    "KYD Core (OSS GUI client for KYD)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "kydcoin-qt"
+            VALUE "InternalName",       "kyd-qt"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "kydcoin-qt.exe"
+            VALUE "OriginalFilename",   "kyd-qt.exe"
             VALUE "ProductName",        "KYD Core"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END

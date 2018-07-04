@@ -328,32 +328,32 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
         /* KYD features */
-        {"kydcoin", "masternode", &masternode, true, true, false},
-        {"kydcoin", "listmasternodes", &listmasternodes, true, true, false},
-        {"kydcoin", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"kydcoin", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"kydcoin", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"kydcoin", "masternodedebug", &masternodedebug, true, true, false},
-        {"kydcoin", "startmasternode", &startmasternode, true, true, false},
-        {"kydcoin", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"kydcoin", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"kydcoin", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"kydcoin", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"kydcoin", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"kydcoin", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"kydcoin", "mnbudget", &mnbudget, true, true, false},
-        {"kydcoin", "preparebudget", &preparebudget, true, true, false},
-        {"kydcoin", "submitbudget", &submitbudget, true, true, false},
-        {"kydcoin", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"kydcoin", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"kydcoin", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"kydcoin", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"kydcoin", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"kydcoin", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"kydcoin", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"kydcoin", "checkbudgets", &checkbudgets, true, true, false},
-        {"kydcoin", "mnsync", &mnsync, true, true, false},
-        {"kydcoin", "spork", &spork, true, true, false},
+        {"kyd", "masternode", &masternode, true, true, false},
+        {"kyd", "listmasternodes", &listmasternodes, true, true, false},
+        {"kyd", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"kyd", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"kyd", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"kyd", "masternodedebug", &masternodedebug, true, true, false},
+        {"kyd", "startmasternode", &startmasternode, true, true, false},
+        {"kyd", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"kyd", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"kyd", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"kyd", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"kyd", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"kyd", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"kyd", "mnbudget", &mnbudget, true, true, false},
+        {"kyd", "preparebudget", &preparebudget, true, true, false},
+        {"kyd", "submitbudget", &submitbudget, true, true, false},
+        {"kyd", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"kyd", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"kyd", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"kyd", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"kyd", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"kyd", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"kyd", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"kyd", "checkbudgets", &checkbudgets, true, true, false},
+        {"kyd", "mnsync", &mnsync, true, true, false},
+        {"kyd", "spork", &spork, true, true, false},
 #ifdef ENABLE_WALLET
 
         /* Wallet */
@@ -1070,7 +1070,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(string methodname, string args)
 {
-    return "> kydcoin-cli " + methodname + " " + args + "\n";
+    return "> kyd-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args)

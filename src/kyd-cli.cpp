@@ -28,7 +28,7 @@ std::string HelpMessageCli()
     string strUsage;
     strUsage += HelpMessageGroup(_("Options:"));
     strUsage += HelpMessageOpt("-?", _("This help message"));
-    strUsage += HelpMessageOpt("-conf=<file>", strprintf(_("Specify configuration file (default: %s)"), "kydcoin.conf"));
+    strUsage += HelpMessageOpt("-conf=<file>", strprintf(_("Specify configuration file (default: %s)"), "kyd.conf"));
     strUsage += HelpMessageOpt("-datadir=<dir>", _("Specify data directory"));
     strUsage += HelpMessageOpt("-testnet", _("Use the test network"));
     strUsage += HelpMessageOpt("-regtest", _("Enter regression test mode, which uses a special chain in which blocks can be "
@@ -72,9 +72,9 @@ static bool AppInitRPC(int argc, char* argv[])
         std::string strUsage = _("KYD Core RPC client version") + " " + FormatFullVersion() + "\n";
         if (!mapArgs.count("-version")) {
             strUsage += "\n" + _("Usage:") + "\n" +
-                        "  kydcoin-cli [options] <command> [params]  " + _("Send command to KYD Core") + "\n" +
-                        "  kydcoin-cli [options] help                " + _("List commands") + "\n" +
-                        "  kydcoin-cli [options] help <command>      " + _("Get help for a command") + "\n";
+                        "  kyd-cli [options] <command> [params]  " + _("Send command to KYD Core") + "\n" +
+                        "  kyd-cli [options] help                " + _("List commands") + "\n" +
+                        "  kyd-cli [options] help <command>      " + _("Get help for a command") + "\n";
 
             strUsage += "\n" + HelpMessageCli();
         }

@@ -168,7 +168,7 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../kydcoin.qrc"/>
+  <include location="../kyd.qrc"/>
  </resources>
  <connections/>
 </ui>

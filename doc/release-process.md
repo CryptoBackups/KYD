@@ -3,7 +3,7 @@ Release Process
 
 Before every release candidate:
 
-* Update translations see [translation_process.md](https://github.com/kydcoin/kydcoin/blob/master/doc/translation_process.md#synchronising-translations).
+* Update translations see [translation_process.md](https://github.com/kyd/kyd/blob/master/doc/translation_process.md#synchronising-translations).
 
 Before every minor and major release:
 
@@ -24,10 +24,10 @@ If you're using the automated script (found in [contrib/gitian-build.sh](/contri
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/kydcoin/gitian.sigs.git
-    git clone https://github.com/kydcoin/kydcoin-detached-sigs.git
+    git clone https://github.com/kyd/gitian.sigs.git
+    git clone https://github.com/kyd/kyd-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/kydcoin/kydcoin.git
+    git clone https://github.com/kyd/kyd.git
 
 ### KYD maintainers/release engineers, suggestion for writing release notes
 
@@ -50,7 +50,7 @@ If you're using the automated script (found in [contrib/gitian-build.sh](/contri
 
 Setup Gitian descriptors:
 
-    pushd ./kydcoin
+    pushd ./kyd
     export SIGNER=(your Gitian key, ie bluematt, sipa, etc)
     export VERSION=(new version, e.g. 0.8.0)
     git fetch
@@ -84,7 +84,7 @@ Create the OS X SDK tarball, see the [OS X readme](README_osx.md) for details, a
 By default, Gitian will fetch source files as needed. To cache them ahead of time:
 
     pushd ./gitian-builder
-    make -C ../kydcoin/depends download SOURCES_PATH=`pwd`/cache/common
+    make -C ../kyd/depends download SOURCES_PATH=`pwd`/cache/common
     popd
 
 Only missing files will be fetched, so this is safe to re-run for each build.
@@ -92,7 +92,7 @@ Only missing files will be fetched, so this is safe to re-run for each build.
 NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from local URLs. For example:
 
     pushd ./gitian-builder
-    ./bin/gbuild --url kydcoin=/path/to/kydcoin,signature=/path/to/sigs {rest of arguments}
+    ./bin/gbuild --url kyd=/path/to/kyd,signature=/path/to/sigs {rest of arguments}
     popd
 
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
@@ -100,47 +100,47 @@ The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 ### Build and sign KYD Core for Linux, Windows, and OS X:
 
     pushd ./gitian-builder
-    ./bin/gbuild --memory 3000 --commit kydcoin=v${VERSION} ../kydcoin/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../kydcoin/contrib/gitian-descriptors/gitian-linux.yml
-    mv build/out/kydcoin-*.tar.gz build/out/src/kydcoin-*.tar.gz ../
+    ./bin/gbuild --memory 3000 --commit kyd=v${VERSION} ../kyd/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../kyd/contrib/gitian-descriptors/gitian-linux.yml
+    mv build/out/kyd-*.tar.gz build/out/src/kyd-*.tar.gz ../
 
-    ./bin/gbuild --memory 3000 --commit kydcoin=v${VERSION} ../kydcoin/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../kydcoin/contrib/gitian-descriptors/gitian-win.yml
-    mv build/out/kydcoin-*-win-unsigned.tar.gz inputs/kydcoin-win-unsigned.tar.gz
-    mv build/out/kydcoin-*.zip build/out/kydcoin-*.exe ../
+    ./bin/gbuild --memory 3000 --commit kyd=v${VERSION} ../kyd/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../kyd/contrib/gitian-descriptors/gitian-win.yml
+    mv build/out/kyd-*-win-unsigned.tar.gz inputs/kyd-win-unsigned.tar.gz
+    mv build/out/kyd-*.zip build/out/kyd-*.exe ../
 
-    ./bin/gbuild --memory 3000 --commit kydcoin=v${VERSION} ../kydcoin/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../kydcoin/contrib/gitian-descriptors/gitian-osx.yml
-    mv build/out/kydcoin-*-osx-unsigned.tar.gz inputs/kydcoin-osx-unsigned.tar.gz
-    mv build/out/kydcoin-*.tar.gz build/out/kydcoin-*.dmg ../
+    ./bin/gbuild --memory 3000 --commit kyd=v${VERSION} ../kyd/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../kyd/contrib/gitian-descriptors/gitian-osx.yml
+    mv build/out/kyd-*-osx-unsigned.tar.gz inputs/kyd-osx-unsigned.tar.gz
+    mv build/out/kyd-*.tar.gz build/out/kyd-*.dmg ../
 
-    ./bin/gbuild --memory 3000 --commit kydcoin=v${VERSION} ../kydcoin/contrib/gitian-descriptors/gitian-aarch64.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../kydcoin/contrib/gitian-descriptors/gitian-aarch64.yml
-    mv build/out/kydcoin-*.tar.gz build/out/src/kydcoin-*.tar.gz ../
+    ./bin/gbuild --memory 3000 --commit kyd=v${VERSION} ../kyd/contrib/gitian-descriptors/gitian-aarch64.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../kyd/contrib/gitian-descriptors/gitian-aarch64.yml
+    mv build/out/kyd-*.tar.gz build/out/src/kyd-*.tar.gz ../
     popd
 
 Build output expected:
 
-  1. source tarball (`kydcoin-${VERSION}.tar.gz`)
-  2. linux 32-bit and 64-bit dist tarballs (`kydcoin-${VERSION}-linux[32|64].tar.gz`)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (`kydcoin-${VERSION}-win[32|64]-setup-unsigned.exe`, `kydcoin-${VERSION}-win[32|64].zip`)
-  4. OS X unsigned installer and dist tarball (`kydcoin-${VERSION}-osx-unsigned.dmg`, `kydcoin-${VERSION}-osx64.tar.gz`)
+  1. source tarball (`kyd-${VERSION}.tar.gz`)
+  2. linux 32-bit and 64-bit dist tarballs (`kyd-${VERSION}-linux[32|64].tar.gz`)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (`kyd-${VERSION}-win[32|64]-setup-unsigned.exe`, `kyd-${VERSION}-win[32|64].zip`)
+  4. OS X unsigned installer and dist tarball (`kyd-${VERSION}-osx-unsigned.dmg`, `kyd-${VERSION}-osx64.tar.gz`)
   5. Gitian signatures (in `gitian.sigs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
 
 ### Verify other gitian builders signatures to your own. (Optional)
 
 Add other gitian builders keys to your gpg keyring, and/or refresh keys.
 
-    gpg --import kydcoin/contrib/gitian-keys/*.pgp
+    gpg --import kyd/contrib/gitian-keys/*.pgp
     gpg --refresh-keys
 
 Verify the signatures
 
     pushd ./gitian-builder
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../kydcoin/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../kydcoin/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../kydcoin/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../kydcoin/contrib/gitian-descriptors/gitian-aarch64.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../kyd/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../kyd/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../kyd/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../kyd/contrib/gitian-descriptors/gitian-aarch64.yml
     popd
 
 ### Next steps:
@@ -162,22 +162,22 @@ Codesigner only: Create Windows/OS X detached signatures:
 
 Codesigner only: Sign the osx binary:
 
-    transfer kydcoin-osx-unsigned.tar.gz to osx for signing
-    tar xf kydcoin-osx-unsigned.tar.gz
+    transfer kyd-osx-unsigned.tar.gz to osx for signing
+    tar xf kyd-osx-unsigned.tar.gz
     ./detached-sig-create.sh -s "Key ID"
     Enter the keychain password and authorize the signature
     Move signature-osx.tar.gz back to the gitian host
 
 Codesigner only: Sign the windows binaries:
 
-    tar xf kydcoin-win-unsigned.tar.gz
+    tar xf kyd-win-unsigned.tar.gz
     ./detached-sig-create.sh -key /path/to/codesign.key
     Enter the passphrase for the key when prompted
     signature-win.tar.gz will be created
 
 Codesigner only: Commit the detached codesign payloads:
 
-    cd ~/kydcoin-detached-sigs
+    cd ~/kyd-detached-sigs
     checkout the appropriate branch for this release series
     rm -rf *
     tar xf signature-osx.tar.gz
@@ -190,25 +190,25 @@ Codesigner only: Commit the detached codesign payloads:
 Non-codesigners: wait for Windows/OS X detached signatures:
 
 - Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [kydcoin-detached-sigs](https://github.com/kydcoin/kydcoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [kyd-detached-sigs](https://github.com/kyd/kyd-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the signed OS X binary:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../kydcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../kydcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../kydcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    mv build/out/kydcoin-osx-signed.dmg ../kydcoin-${VERSION}-osx.dmg
+    ./bin/gbuild -i --commit signature=v${VERSION} ../kyd/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../kyd/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../kyd/contrib/gitian-descriptors/gitian-osx-signer.yml
+    mv build/out/kyd-osx-signed.dmg ../kyd-${VERSION}-osx.dmg
     popd
 
 Create (and optionally verify) the signed Windows binaries:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../kydcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../kydcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../kydcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-    mv build/out/kydcoin-*win64-setup.exe ../kydcoin-${VERSION}-win64-setup.exe
-    mv build/out/kydcoin-*win32-setup.exe ../kydcoin-${VERSION}-win32-setup.exe
+    ./bin/gbuild -i --commit signature=v${VERSION} ../kyd/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../kyd/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../kyd/contrib/gitian-descriptors/gitian-win-signer.yml
+    mv build/out/kyd-*win64-setup.exe ../kyd-${VERSION}-win64-setup.exe
+    mv build/out/kyd-*win32-setup.exe ../kyd-${VERSION}-win32-setup.exe
     popd
 
 Commit your signature for the signed OS X/Windows binaries:
@@ -230,17 +230,17 @@ sha256sum * > SHA256SUMS
 
 The list of files should be:
 ```
-kydcoin-${VERSION}-aarch64-linux-gnu.tar.gz
-kydcoin-${VERSION}-arm-linux-gnueabihf.tar.gz
-kydcoin-${VERSION}-i686-pc-linux-gnu.tar.gz
-kydcoin-${VERSION}-x86_64-linux-gnu.tar.gz
-kydcoin-${VERSION}-osx64.tar.gz
-kydcoin-${VERSION}-osx.dmg
-kydcoin-${VERSION}.tar.gz
-kydcoin-${VERSION}-win32-setup.exe
-kydcoin-${VERSION}-win32.zip
-kydcoin-${VERSION}-win64-setup.exe
-kydcoin-${VERSION}-win64.zip
+kyd-${VERSION}-aarch64-linux-gnu.tar.gz
+kyd-${VERSION}-arm-linux-gnueabihf.tar.gz
+kyd-${VERSION}-i686-pc-linux-gnu.tar.gz
+kyd-${VERSION}-x86_64-linux-gnu.tar.gz
+kyd-${VERSION}-osx64.tar.gz
+kyd-${VERSION}-osx.dmg
+kyd-${VERSION}.tar.gz
+kyd-${VERSION}-win32-setup.exe
+kyd-${VERSION}-win32.zip
+kyd-${VERSION}-win64-setup.exe
+kyd-${VERSION}-win64.zip
 ```
 The `*-debug*` files generated by the gitian build contain debug symbols
 for troubleshooting by developers. It is assumed that anyone that is interested
@@ -266,6 +266,6 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 
-  - Create a [new GitHub release](https://github.com/kydcoin/kydcoin/releases/new) with a link to the archived release notes.
+  - Create a [new GitHub release](https://github.com/kyd/kyd/releases/new) with a link to the archived release notes.
 
   - Celebrate

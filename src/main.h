@@ -10,7 +10,7 @@
 #define BITCOIN_MAIN_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/kydcoin-config.h"
+#include "config/kyd-config.h"
 #endif
 
 #include "bignum.h"

@@ -606,8 +606,8 @@
         <translation>Send coins to a KYD address</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and kydcoin: URIs)</source>
-        <translation>Request payments (generates QR codes and kydcoin: URIs)</translation>
+        <source>Request payments (generates QR codes and kyd: URIs)</source>
+        <translation>Request payments (generates QR codes and kyd: URIs)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -666,8 +666,8 @@
         <translation>Open Masternode configuration file</translation>
     </message>
     <message>
-        <source>Open a kydcoin: URI or payment request</source>
-        <translation>Open a kydcoin: URI or payment request</translation>
+        <source>Open a kyd: URI or payment request</source>
+        <translation>Open a kyd: URI or payment request</translation>
     </message>
     <message>
         <source>&amp;Blockchain explorer</source>
@@ -829,8 +829,8 @@ Address: %4
         <translation>TextLabel</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (kydcoin.conf).</source>
-        <translation>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (kydcoin.conf).</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (kyd.conf).</source>
+        <translation>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (kyd.conf).</translation>
     </message>
 </context>
 <context>
@@ -1853,8 +1853,8 @@ Please check the address and try again.</translation>
         <translation>Invalid payment address %1</translation>
     </message>
     <message>
-        <source>Cannot start kydcoin: click-to-pay handler</source>
-        <translation>Cannot start kydcoin: click-to-pay handler</translation>
+        <source>Cannot start kyd: click-to-pay handler</source>
+        <translation>Cannot start kyd: click-to-pay handler</translation>
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid KYD address or malformed URI parameters.</source>
@@ -2844,8 +2844,8 @@ Please check the address and try again.</translation>
         <translation>Message:</translation>
     </message>
     <message>
-        <source>A message that was attached to the kydcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the KYD network.</source>
-        <translation>A message that was attached to the kydcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the KYD network.</translation>
+        <source>A message that was attached to the kyd: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the KYD network.</source>
+        <translation>A message that was attached to the kyd: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the KYD network.</translation>
     </message>
     <message>
         <source>This is an unverified payment request.</source>
@@ -3589,7 +3589,7 @@ Please check the address and try again.</translation>
     </message>
 </context>
 <context>
-    <name>kydcoin-core</name>
+    <name>kyd-core</name>
     <message>
         <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
         <translation>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</translation>
@@ -3771,10 +3771,10 @@ Please check the address and try again.</translation>
         <translation>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</translation>
     </message>
     <message>
-        <source>To use kydcoind, or the -server option to kydcoin-qt, you must set an rpcpassword in the configuration file:
+        <source>To use kydd, or the -server option to kyd-qt, you must set an rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=kydcoinrpc
+rpcuser=kydrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
@@ -3782,10 +3782,10 @@ If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
 for example: alertnotify=echo %%s | mail -s "KYD Alert" admin@foo.com
 </source>
-        <translation>To use kydcoind, or the -server option to kydcoin-qt, you must set an rpcpassword in the configuration file:
+        <translation>To use kydd, or the -server option to kyd-qt, you must set an rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=kydcoinrpc
+rpcuser=kydrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.

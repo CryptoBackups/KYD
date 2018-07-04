@@ -1253,7 +1253,7 @@
     </message>
     </context>
 <context>
-    <name>kydcoin-core</name>
+    <name>kyd-core</name>
     <message>
         <source>Error</source>
         <translation>Error</translation>

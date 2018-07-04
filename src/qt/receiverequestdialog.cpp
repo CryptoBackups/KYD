@@ -22,7 +22,7 @@
 #endif
 
 #if defined(HAVE_CONFIG_H)
-#include "config/kydcoin-config.h" /* for USE_QRCODE */
+#include "config/kyd-config.h" /* for USE_QRCODE */
 #endif
 
 #ifdef USE_QRCODE

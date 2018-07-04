@@ -9,7 +9,7 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between kydcoin-cli and kydcoind)
+ * CBaseChainParams defines the base parameters (shared between kyd-cli and kydd)
  * of a given instance of the KYD system.
  */
 class CBaseChainParams

@@ -77,7 +77,7 @@ HEADERS += src/bignum.h \
            src/compressor.h \
            src/core_io.h \
            src/crypter.h \
-           src/kydcoin-config.h \
+           src/kyd-config.h \
            src/db.h \
            src/eccryptoverify.h \
            src/ecwrapper.h \
@@ -131,7 +131,7 @@ HEADERS += src/bignum.h \
            src/wallet_ismine.h \
            src/walletdb.h \
            src/compat/sanity.h \
-           src/config/kydcoin-config.h \
+           src/config/kyd-config.h \
            src/crypto/common.h \
            src/crypto/hmac_sha256.h \
            src/crypto/hmac_sha512.h \
@@ -331,7 +331,7 @@ HEADERS += src/bignum.h \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.h \
            src/crypto/aes_helper.c \
            src/qt/bitcoinamountfield.moc \
-           src/qt/kydcoin.moc \
+           src/qt/kyd.moc \
            src/qt/intro.moc \
            src/qt/overviewpage.moc \
            src/qt/rpcconsole.moc \
@@ -369,9 +369,9 @@ SOURCES += src/activemasternode.cpp \
            src/core_read.cpp \
            src/core_write.cpp \
            src/crypter.cpp \
-           src/kydcoin-cli.cpp \
-           src/kydcoin-tx.cpp \
-           src/kydcoin.cpp \
+           src/kyd-cli.cpp \
+           src/kyd-tx.cpp \
+           src/kyd.cpp \
            src/db.cpp \
            src/eccryptoverify.cpp \
            src/ecwrapper.cpp \
@@ -466,8 +466,8 @@ SOURCES += src/activemasternode.cpp \
            src/qt/coincontroldialog.cpp \
            src/qt/coincontroltreewidget.cpp \
            src/qt/csvmodelwriter.cpp \
-           src/qt/kydcoin.cpp \
-           src/qt/kydcoinstrings.cpp \
+           src/qt/kyd.cpp \
+           src/qt/kydstrings.cpp \
            src/qt/editaddressdialog.cpp \
            src/qt/guiutil.cpp \
            src/qt/intro.cpp \
@@ -545,7 +545,7 @@ SOURCES += src/activemasternode.cpp \
            src/test/sighash_tests.cpp \
            src/test/sigopcount_tests.cpp \
            src/test/skiplist_tests.cpp \
-           src/test/test_kydcoin.cpp \
+           src/test/test_kyd.cpp \
            src/test/timedata_tests.cpp \
            src/test/transaction_tests.cpp \
            src/test/uint256_tests.cpp \
@@ -636,21 +636,21 @@ SOURCES += src/activemasternode.cpp \
            src/leveldb/helpers/memenv/memenv.cc \
            src/leveldb/helpers/memenv/memenv_test.cc \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.c
-RESOURCES += src/qt/kydcoin.qrc src/qt/kydcoin_locale.qrc
+RESOURCES += src/qt/kyd.qrc src/qt/kyd_locale.qrc
 
-TRANSLATIONS += src/qt/locale/kydcoin_bg.ts \
-                src/qt/locale/kydcoin_de.ts \
-                src/qt/locale/kydcoin_en.ts \
-                src/qt/locale/kydcoin_es.ts \
-                src/qt/locale/kydcoin_fi.ts \
-                src/qt/locale/kydcoin_fr.ts \
-                src/qt/locale/kydcoin_it.ts \
-                src/qt/locale/kydcoin_ja.ts \
-                src/qt/locale/kydcoin_pl.ts \
-                src/qt/locale/kydcoin_pt.ts \
-                src/qt/locale/kydcoin_ru.ts \
-                src/qt/locale/kydcoin_sk.ts \
-                src/qt/locale/kydcoin_sv.ts \
-                src/qt/locale/kydcoin_vi.ts \
-                src/qt/locale/kydcoin_zh_CN.ts \
-                src/qt/locale/kydcoin_zh_TW.ts
+TRANSLATIONS += src/qt/locale/kyd_bg.ts \
+                src/qt/locale/kyd_de.ts \
+                src/qt/locale/kyd_en.ts \
+                src/qt/locale/kyd_es.ts \
+                src/qt/locale/kyd_fi.ts \
+                src/qt/locale/kyd_fr.ts \
+                src/qt/locale/kyd_it.ts \
+                src/qt/locale/kyd_ja.ts \
+                src/qt/locale/kyd_pl.ts \
+                src/qt/locale/kyd_pt.ts \
+                src/qt/locale/kyd_ru.ts \
+                src/qt/locale/kyd_sk.ts \
+                src/qt/locale/kyd_sv.ts \
+                src/qt/locale/kyd_vi.ts \
+                src/qt/locale/kyd_zh_CN.ts \
+                src/qt/locale/kyd_zh_TW.ts

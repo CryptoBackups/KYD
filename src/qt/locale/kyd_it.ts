@@ -594,8 +594,8 @@
         <translation>Invia monete all'indirizzo KYD</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and kydcoin: URIs)</source>
-        <translation>Richiedi pagamenti (genera codici QR e kydcoin: URIs)</translation>
+        <source>Request payments (generates QR codes and kyd: URIs)</source>
+        <translation>Richiedi pagamenti (genera codici QR e kyd: URIs)</translation>
     </message>
     <message>
         <source>&amp;Masternodes</source>
@@ -634,8 +634,8 @@
         <translation>Impostazioni MultiSend</translation>
     </message>
     <message>
-        <source>Open a kydcoin: URI or payment request</source>
-        <translation>Apri un kydcoin: URI o richiesta di pagamento</translation>
+        <source>Open a kyd: URI or payment request</source>
+        <translation>Apri un kyd: URI o richiesta di pagamento</translation>
     </message>
     <message>
         <source>Block explorer window</source>
@@ -745,8 +745,8 @@ MultiSend: %1</translation>
         <translation>Cerca</translation>
     </message>
     <message>
-        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (kydcoin.conf).</source>
-        <translation>Non tutte le transazioni verranno visualizzate. Per vedere tutte le transazioni è necessario aggiungere txindex=1 nel file di configurazione (kydcoin.conf)</translation>
+        <source>Not all transactions will be shown. To view all transactions you need to set txindex=1 in the configuration file (kyd.conf).</source>
+        <translation>Non tutte le transazioni verranno visualizzate. Per vedere tutte le transazioni è necessario aggiungere txindex=1 nel file di configurazione (kyd.conf)</translation>
     </message>
 </context>
 <context>
@@ -1249,7 +1249,7 @@ MultiSend: %1</translation>
     </message>
     </context>
 <context>
-    <name>kydcoin-core</name>
+    <name>kyd-core</name>
     <message>
         <source>Error</source>
         <translation>Errore</translation>

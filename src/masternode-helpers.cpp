@@ -20,7 +20,7 @@ void ThreadMasternodePool()
     if (fLiteMode) return; //disable all Masternode related functionality
 
     // Make this thread recognisable
-    RenameThread("kydcoin-mnpool");
+    RenameThread("kyd-mnpool");
 
     unsigned int c = 0;
 

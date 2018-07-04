@@ -28,7 +28,7 @@
       </sizepolicy>
      </property>
      <property name="pixmap">
-      <pixmap resource="../kydcoin.qrc">:/images/about</pixmap>
+      <pixmap resource="../kyd.qrc">:/images/about</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -100,7 +100,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../kydcoin.qrc"/>
+  <include location="../kyd.qrc"/>
  </resources>
  <connections>
   <connection>

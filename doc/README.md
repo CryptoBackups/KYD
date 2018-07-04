@@ -13,12 +13,12 @@ The following are some helpful notes on how to run KYD on your native platform.
 
 Unpack the files into a directory and run:
 
-- bin/32/kydcoin-qt (GUI, 32-bit) or bin/32/kydcoind (headless, 32-bit)
-- bin/64/kydcoin-qt (GUI, 64-bit) or bin/64/kydcoind (headless, 64-bit)
+- bin/32/kyd-qt (GUI, 32-bit) or bin/32/kydd (headless, 32-bit)
+- bin/64/kyd-qt (GUI, 64-bit) or bin/64/kydd (headless, 64-bit)
 
 ### Windows
 
-Unpack the files into a directory, and then run kydcoin-qt.exe.
+Unpack the files into a directory, and then run kyd-qt.exe.
 
 ### OSX
 
@@ -38,7 +38,7 @@ The following are developer notes on how to build KYD on your native platform. T
 
 Development
 ---------------------
-The KYD repo's [root README](https://github.com/kydcoin/kydcoin/blob/master/README.md) contains relevant information on the development process and automated testing.
+The KYD repo's [root README](https://github.com/kyd/kyd/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)

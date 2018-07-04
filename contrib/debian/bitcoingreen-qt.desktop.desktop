@@ -2,10 +2,10 @@
 Encoding=UTF-8
 Name=KYD
 Comment=KYD P2P Cryptocurrency
-Exec=kydcoin-qt %u
+Exec=kyd-qt %u
 Terminal=false
 Type=Application
-Icon=kydcoin128
-MimeType=x-scheme-handler/kydcoin;
+Icon=kyd128
+MimeType=x-scheme-handler/kyd;
 Categories=Office;Finance;
-Name[en_US]=kydcoin-qt.desktop
+Name[en_US]=kyd-qt.desktop

@@ -462,7 +462,7 @@ void BitcoinMiner(CWallet* pwallet, bool fProofOfStake)
 {
     LogPrintf("KYDMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
-    RenameThread("kydcoin-miner");
+    RenameThread("kyd-miner");
 
     // Each thread has its own key and counter
     CReserveKey reservekey(pwallet);

@@ -72,15 +72,15 @@ bin_PROGRAMS =
 TESTS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += kydcoind
+  bin_PROGRAMS += kydd
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += kydcoin-cli kydcoin-tx
+  bin_PROGRAMS += kyd-cli kyd-tx
 endif
 
 .PHONY: FORCE
-# kydcoin core #
+# kyd core #
 BITCOIN_CORE_H = \
   bignum.h \
   activemasternode.h \
@@ -183,7 +183,7 @@ obj/build.h: FORCE
 	  $(abs_top_srcdir)
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between kydcoind and kydcoin-qt
+# server: shared between kydd and kyd-qt
 libbitcoin_server_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_SOURCES = \
   addrman.cpp \
@@ -228,7 +228,7 @@ libbitcoin_zmq_a_SOURCES = \
   zmq/zmqpublishnotifier.cpp
 endif
 
-# wallet: shared between kydcoind and kydcoin-qt, but only linked
+# wallet: shared between kydd and kyd-qt, but only linked
 # when wallet enabled
 
 libbitcoin_wallet_a_CFLAGS = -fPIC
@@ -290,7 +290,7 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sph_skein.h \
   crypto/sph_types.h
 
-# common: shared between kydcoind, and kydcoin-qt and non-server tools
+# common: shared between kydd, and kyd-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_common_a_SOURCES = \
   allocators.cpp \
@@ -348,7 +348,7 @@ libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 libbitcoin_util_a_SOURCES += compat/glibcxx_compat.cpp
 endif
 
-# cli: shared between kydcoin-cli and kydcoin-qt
+# cli: shared between kyd-cli and kyd-qt
 libbitcoin_cli_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_SOURCES = \
   rpcclient.cpp \
@@ -358,7 +358,7 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-kydcoind_LDADD = \
+kydd_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -369,26 +369,26 @@ kydcoind_LDADD = \
   $(LIBSECP256K1)
 
 if ENABLE_ZMQ
-kydcoind_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+kydd_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
 
 if ENABLE_WALLET
-kydcoind_LDADD += libbitcoin_wallet.a
+kydd_LDADD += libbitcoin_wallet.a
 endif
-kydcoind_SOURCES = kydcoind.cpp
+kydd_SOURCES = kydd.cpp
 #
 
 if TARGET_WINDOWS
-kydcoind_SOURCES += kydcoind-res.rc
+kydd_SOURCES += kydd-res.rc
 endif
 
-kydcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-kydcoind_CPPFLAGS = $(BITCOIN_INCLUDES)
-kydcoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+kydd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+kydd_CPPFLAGS = $(BITCOIN_INCLUDES)
+kydd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 
-# kydcoin-cli binary #
-kydcoin_cli_LDADD = \
+# kyd-cli binary #
+kyd_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
@@ -397,14 +397,14 @@ kydcoin_cli_LDADD = \
   $(CRYPTO_LIBS) \
   $(EVENT_LIBS)
 
-kydcoin_cli_SOURCES = \
-  kydcoin-cli.cpp
+kyd_cli_SOURCES = \
+  kyd-cli.cpp
 
-kydcoin_cli_CPPFLAGS = $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+kyd_cli_CPPFLAGS = $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
 #
 
-# kydcoin-tx binary #
-kydcoin_tx_LDADD = \
+# kyd-tx binary #
+kyd_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -413,15 +413,15 @@ kydcoin_tx_LDADD = \
   $(BOOST_LIBS) \
   $(CRYPTO_LIBS)
 
-kydcoin_tx_SOURCES = kydcoin-tx.cpp
-kydcoin_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
+kyd_tx_SOURCES = kyd-tx.cpp
+kyd_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
-kydcoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+kyd_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-kydcoin_cli_SOURCES += kydcoin-cli-res.rc
+kyd_cli_SOURCES += kyd-cli-res.rc
 endif
-kydcoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+kyd_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if BUILD_BITCOIN_LIBS
 include_HEADERS = script/bitcoinconsensus.h

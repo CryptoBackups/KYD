@@ -385,6 +385,6 @@
     </message>
     </context>
 <context>
-    <name>kydcoin-core</name>
+    <name>kyd-core</name>
     </context>
 </TS>
