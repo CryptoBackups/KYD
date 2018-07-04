@@ -1,10 +1,10 @@
 UNIX BUILD NOTES
 ====================
-Some notes on how to build Northern in Unix.
+Some notes on how to build KYD in Unix.
 
 Note
 ---------------------
-Always use absolute paths to configure and compile northern and the dependencies,
+Always use absolute paths to configure and compile kydcoin and the dependencies,
 for example, when specifying the the path of the dependency:
 
 	../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX
@@ -22,7 +22,7 @@ make
 make install # optional
 ```
 
-This will build northern-qt as well if the dependencies are met.
+This will build kydcoin-qt as well if the dependencies are met.
 
 Dependencies
 ---------------------
@@ -51,7 +51,7 @@ System requirements
 --------------------
 
 C++ compilers are memory-hungry. It is recommended to have at least 1 GB of
-memory available when compiling Northern Core. With 512MB of memory or less
+memory available when compiling KYD Core. With 512MB of memory or less
 compilation will take much longer due to swap thrashing.
 
 Dependency Build Instructions: Ubuntu & Debian
@@ -84,7 +84,7 @@ Optional:
 Dependencies for the GUI: Ubuntu & Debian
 -----------------------------------------
 
-If you want to build Northern-Qt, make sure that the required packages for Qt development
+If you want to build KYD-Qt, make sure that the required packages for Qt development
 are installed. Qt 5 is necessary to build the GUI.
 If both Qt 4 and Qt 5 are installed, Qt 5 will be used.
 To build without GUI pass `--without-gui`.
@@ -97,12 +97,12 @@ libqrencode (optional) can be installed with:
 
     sudo apt-get install libqrencode-dev
 
-Once these are installed, they will be found by configure and a northern-qt executable will be
+Once these are installed, they will be found by configure and a kydcoin-qt executable will be
 built by default.
 
 Notes
 -----
-The release is built with GCC and then "strip northernd" to strip the debug
+The release is built with GCC and then "strip kydcoind" to strip the debug
 symbols, which reduces the executable size by about 90%.
 
 
@@ -133,7 +133,7 @@ It is recommended to use Berkeley DB 4.8. If you have to build it yourself:
 ```bash
 BITCOINGREEN_ROOT=$(pwd)
 
-# Pick some path to install BDB to, here we create a directory within the northern directory
+# Pick some path to install BDB to, here we create a directory within the kydcoin directory
 BDB_PREFIX="${BITCOINGREEN_ROOT}/db4"
 mkdir -p $BDB_PREFIX
 
@@ -149,7 +149,7 @@ cd db-4.8.30.NC/build_unix/
 ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX
 make install
 
-# Configure Northern Core to use our own-built instance of BDB
+# Configure KYD Core to use our own-built instance of BDB
 cd $BITCOINGREEN_ROOT
 ./configure (other args...) LDFLAGS="-L${BDB_PREFIX}/lib/" CPPFLAGS="-I${BDB_PREFIX}/include/"
 ```
@@ -167,7 +167,7 @@ If you need to build Boost yourself:
 
 Security
 --------
-To help make your Northern installation more secure by making certain attacks impossible to
+To help make your KYD installation more secure by making certain attacks impossible to
 exploit even if a vulnerability is found, binaries are hardened by default.
 This can be disabled with:
 
@@ -191,7 +191,7 @@ Hardening enables the following features:
 
     To test that you have built PIE executable, install scanelf, part of paxutils, and use:
 
-    	scanelf -e ./northernd
+    	scanelf -e ./kydcoind
 
     The output should contain:
      TYPE
@@ -199,13 +199,13 @@ Hardening enables the following features:
 
 * Non-executable Stack
     If the stack is executable then trivial stack based buffer overflow exploits are possible if
-    vulnerable buffers are found. By default, northern should be built with a non-executable stack
+    vulnerable buffers are found. By default, kydcoin should be built with a non-executable stack
     but if one of the libraries it uses asks for an executable stack or someone makes a mistake
     and uses a compiler extension which requires an executable stack, it will silently build an
     executable without the non-executable stack protection.
 
     To verify that the stack is non-executable after compiling use:
-    `scanelf -e ./northernd`
+    `scanelf -e ./kydcoind`
 
     the output should contain:
 	STK/REL/PTL
