@@ -1,7 +1,7 @@
 <!--- Remove this description and sections that do not apply -->
 
 This issue tracker is only for technical issues related to KYD Core.
-General KYD questions and/or support requests and are best directed to the [KYD Discord](https://discord.savebitcoin.io).
+General KYD questions and/or support requests and are best directed to the [KYD Discord](https://discord.gg/CcAT5Av).
 
 ### Describe the issue
 
